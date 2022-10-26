@@ -33,8 +33,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBoxServicePriority = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbExpress = new System.Windows.Forms.RadioButton();
+            this.rbRegular = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxClientName = new System.Windows.Forms.TextBox();
             this.textBoxDroneModel = new System.Windows.Forms.TextBox();
@@ -105,8 +105,8 @@
             // 
             // groupBoxServicePriority
             // 
-            this.groupBoxServicePriority.Controls.Add(this.radioButton2);
-            this.groupBoxServicePriority.Controls.Add(this.radioButton1);
+            this.groupBoxServicePriority.Controls.Add(this.rbExpress);
+            this.groupBoxServicePriority.Controls.Add(this.rbRegular);
             this.groupBoxServicePriority.Location = new System.Drawing.Point(493, 90);
             this.groupBoxServicePriority.Name = "groupBoxServicePriority";
             this.groupBoxServicePriority.Size = new System.Drawing.Size(200, 55);
@@ -114,27 +114,27 @@
             this.groupBoxServicePriority.TabStop = false;
             this.groupBoxServicePriority.Text = "Service Priority";
             // 
-            // radioButton2
+            // rbExpress
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(103, 22);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(77, 20);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Express";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbExpress.AutoSize = true;
+            this.rbExpress.Location = new System.Drawing.Point(103, 22);
+            this.rbExpress.Name = "rbExpress";
+            this.rbExpress.Size = new System.Drawing.Size(77, 20);
+            this.rbExpress.TabIndex = 1;
+            this.rbExpress.TabStop = true;
+            this.rbExpress.Text = "Express";
+            this.rbExpress.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbRegular
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 22);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(76, 20);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Regular";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbRegular.AutoSize = true;
+            this.rbRegular.Location = new System.Drawing.Point(7, 22);
+            this.rbRegular.Name = "rbRegular";
+            this.rbRegular.Size = new System.Drawing.Size(76, 20);
+            this.rbRegular.TabIndex = 0;
+            this.rbRegular.TabStop = true;
+            this.rbRegular.Text = "Regular";
+            this.rbRegular.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -194,12 +194,13 @@
             this.ServiceTag,
             this.ServiceCost});
             this.listViewRegular.HideSelection = false;
-            this.listViewRegular.Location = new System.Drawing.Point(13, 226);
+            this.listViewRegular.Location = new System.Drawing.Point(16, 226);
             this.listViewRegular.Name = "listViewRegular";
             this.listViewRegular.Size = new System.Drawing.Size(542, 144);
             this.listViewRegular.TabIndex = 12;
             this.listViewRegular.UseCompatibleStateImageBehavior = false;
             this.listViewRegular.View = System.Windows.Forms.View.Details;
+            this.listViewRegular.Click += new System.EventHandler(this.listViewRegular_Click);
             // 
             // ClientName
             // 
@@ -241,6 +242,7 @@
             this.listViewExpress.TabIndex = 13;
             this.listViewExpress.UseCompatibleStateImageBehavior = false;
             this.listViewExpress.View = System.Windows.Forms.View.Details;
+            this.listViewExpress.Click += new System.EventHandler(this.listViewExpress_Click);
             // 
             // columnHeader1
             // 
@@ -311,6 +313,7 @@
             this.buttonRemoveRegular.TabIndex = 18;
             this.buttonRemoveRegular.Text = "RemoveItemRegular";
             this.buttonRemoveRegular.UseVisualStyleBackColor = true;
+            this.buttonRemoveRegular.Click += new System.EventHandler(this.buttonRemoveRegular_Click);
             // 
             // buttonRemoveExpress
             // 
@@ -320,11 +323,12 @@
             this.buttonRemoveExpress.TabIndex = 19;
             this.buttonRemoveExpress.Text = "RemoveItemExpress";
             this.buttonRemoveExpress.UseVisualStyleBackColor = true;
+            this.buttonRemoveExpress.Click += new System.EventHandler(this.buttonRemoveExpress_Click);
             // 
             // numericUpDown
             // 
             this.numericUpDown.Increment = new decimal(new int[] {
-            10,
+            0,
             0,
             0,
             0});
@@ -340,6 +344,7 @@
             0,
             0});
             this.numericUpDown.Name = "numericUpDown";
+            this.numericUpDown.ReadOnly = true;
             this.numericUpDown.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown.TabIndex = 20;
             this.numericUpDown.Value = new decimal(new int[] {
@@ -410,8 +415,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBoxServicePriority;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbExpress;
+        private System.Windows.Forms.RadioButton rbRegular;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxClientName;
         private System.Windows.Forms.TextBox textBoxDroneModel;
