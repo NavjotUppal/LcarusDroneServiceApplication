@@ -16,5 +16,9 @@ namespace LcarusDroneServiceApplication
         {
             InitializeComponent();
         }
+        List<Drone> FinishedList=new List<Drone>();
+        Queue<Drone> RegularService=new Queue<Drone>();
+        Queue<Drone> ExpressService =new Queue<Drone>();
+
     }
 }
