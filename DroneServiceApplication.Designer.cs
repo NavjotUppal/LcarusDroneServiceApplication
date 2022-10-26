@@ -304,6 +304,7 @@
             this.listBoxFinishedService.Name = "listBoxFinishedService";
             this.listBoxFinishedService.Size = new System.Drawing.Size(242, 324);
             this.listBoxFinishedService.TabIndex = 17;
+            this.listBoxFinishedService.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxFinishedService_MouseDoubleClick);
             // 
             // buttonRemoveRegular
             // 

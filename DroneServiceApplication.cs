@@ -16,7 +16,7 @@ namespace LcarusDroneServiceApplication
         {
             InitializeComponent();
         }
-        double cost=0.0;
+        double cost = 0.0;
         //6.2	Create a global List<T> of type Drone called “FinishedList”. 
         List<Drone> FinishedList = new List<Drone>();
         //6.3	Create a global Queue<T> of type Drone called “RegularService”.
@@ -35,7 +35,7 @@ namespace LcarusDroneServiceApplication
                 Double.TryParse(textBoxServiceCost.Text, out cost);
                 drone.setClientName(textBoxClientName.Text);
                 drone.setDroneModel(textBoxDroneModel.Text);
-               
+
                 drone.setServiceTag((int)numericUpDown.Value);
                 drone.setServiceProblem(textAreaServiceProblem.Text);
                 incrementServiceTag();
@@ -44,7 +44,7 @@ namespace LcarusDroneServiceApplication
                     //6.6	Before a new service item is added to the Express Queue the service cost must be increased by 15%.
                     cost = cost + 0.15 * cost;
                     drone.setServiceCost(cost);
-                  
+
                     ExpressService.Enqueue(drone);
                     displayExpressServiceQueue();
                     toolStripStatusLabel.Text = "New drone is added to Express Service Queue";
@@ -52,7 +52,7 @@ namespace LcarusDroneServiceApplication
                 else if (getServicePriority() == "Regular")
                 {
                     drone.setServiceCost(cost);
-                    
+
                     RegularService.Enqueue(drone);
                     displayRegularServiceQueue();
                     toolStripStatusLabel.Text = "New drone is added to Regular Service Queue";
@@ -95,7 +95,7 @@ namespace LcarusDroneServiceApplication
                 lvi.SubItems.Add(drone.getDroneModel());
                 lvi.SubItems.Add(drone.getServiceProblem());
                 lvi.SubItems.Add(drone.getServiceTag());
-                lvi.SubItems.Add("$ "+drone.getServiceCost());
+                lvi.SubItems.Add("$ " + drone.getServiceCost());
                 listViewRegular.Items.Add(lvi);
             }
         }
@@ -135,7 +135,7 @@ namespace LcarusDroneServiceApplication
             {
                 textBoxServiceCost.MaxLength = textBoxServiceCost.TextLength + 2;
             }
-           
+
         }
         // 6.11	Create a custom method to increment the service tag control,
         // this method must be called inside the “AddNewItem” method before the new service item is added to a queue.
@@ -157,7 +157,7 @@ namespace LcarusDroneServiceApplication
             textBoxClientName.Text = RegularService.ElementAt(pos).getClientName();
             textBoxDroneModel.Text = RegularService.ElementAt(pos).getDroneModel();
             textBoxServiceCost.Text = RegularService.ElementAt(pos).getServiceCost();
-            textAreaServiceProblem.Text= RegularService.ElementAt(pos).getServiceProblem();
+            textAreaServiceProblem.Text = RegularService.ElementAt(pos).getServiceProblem();
             numericUpDown.Text = RegularService.ElementAt(pos).getServiceTag();
             rbRegular.Checked = true;
         }
@@ -189,7 +189,7 @@ namespace LcarusDroneServiceApplication
                 displayFinishedList();
             }
         }
-        
+
         // 6.15	Create a button click method that will remove a service item from the express ListView and dequeue the express service Queue<T> data structure.
         // The dequeued item must be added to the List<T> and displayed in the ListBox for finished service items.
         private void buttonRemoveExpress_Click(object sender, EventArgs e)
@@ -209,5 +209,16 @@ namespace LcarusDroneServiceApplication
                 listBoxFinishedService.Items.Add(items.getClientName() + "          $" + items.getServiceCost());
             }
         }
+        // 6.16	Create a double mouse click method that will delete a service item from the finished listbox
+        // and remove the same item from the List<T>.
+        private void listBoxFinishedService_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (FinishedList.Count > 0 && listBoxFinishedService.SelectedIndex >= 0)
+            {
+                FinishedList.Remove(FinishedList[0]);
+                displayFinishedList();
+            }
+        }
     }
 }
+
