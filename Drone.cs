@@ -35,8 +35,9 @@ namespace LcarusDroneServiceApplication
         {
             return droneModel;
         }
-        public void setServiceProblem(string problem)
-        {serviceProblem=problem;
+        public void setServiceProblem(string newProblem)
+        {
+            serviceProblem=newProblem;
         }
         public string getServiceProblem()
         {
@@ -44,6 +45,7 @@ namespace LcarusDroneServiceApplication
         }
         public void setServiceCost(double cost)
         {
+           
             serviceCost=cost;
         }
         public string getServiceCost()
@@ -54,9 +56,9 @@ namespace LcarusDroneServiceApplication
         {
              serviceTag=tag;
         }
-        public int getServiceTag()
+        public string getServiceTag()
         {
-            return (int)serviceTag;
+            return serviceTag.ToString();
         }
     }
 }

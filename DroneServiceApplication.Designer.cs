@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox = new System.Windows.Forms.GroupBox();
+            this.groupBoxServicePriority = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,8 +60,11 @@
             this.buttonRemoveRegular = new System.Windows.Forms.Button();
             this.buttonRemoveExpress = new System.Windows.Forms.Button();
             this.numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.groupBox.SuspendLayout();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.groupBoxServicePriority.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -100,16 +103,16 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Service Cost";
             // 
-            // groupBox
+            // groupBoxServicePriority
             // 
-            this.groupBox.Controls.Add(this.radioButton2);
-            this.groupBox.Controls.Add(this.radioButton1);
-            this.groupBox.Location = new System.Drawing.Point(493, 90);
-            this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(200, 55);
-            this.groupBox.TabIndex = 4;
-            this.groupBox.TabStop = false;
-            this.groupBox.Text = "Service Priority";
+            this.groupBoxServicePriority.Controls.Add(this.radioButton2);
+            this.groupBoxServicePriority.Controls.Add(this.radioButton1);
+            this.groupBoxServicePriority.Location = new System.Drawing.Point(493, 90);
+            this.groupBoxServicePriority.Name = "groupBoxServicePriority";
+            this.groupBoxServicePriority.Size = new System.Drawing.Size(200, 55);
+            this.groupBoxServicePriority.TabIndex = 4;
+            this.groupBoxServicePriority.TabStop = false;
+            this.groupBoxServicePriority.Text = "Service Priority";
             // 
             // radioButton2
             // 
@@ -170,6 +173,7 @@
             this.textBoxServiceCost.Name = "textBoxServiceCost";
             this.textBoxServiceCost.Size = new System.Drawing.Size(120, 22);
             this.textBoxServiceCost.TabIndex = 9;
+            this.textBoxServiceCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxServiceCost_KeyPress);
             // 
             // buttonAddNewItem
             // 
@@ -179,6 +183,7 @@
             this.buttonAddNewItem.TabIndex = 11;
             this.buttonAddNewItem.Text = "AddNewItem";
             this.buttonAddNewItem.UseVisualStyleBackColor = true;
+            this.buttonAddNewItem.Click += new System.EventHandler(this.buttonAddNewItem_Click);
             // 
             // listViewRegular
             // 
@@ -343,11 +348,29 @@
             0,
             0});
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 653);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(966, 26);
+            this.statusStrip1.TabIndex = 21;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(143, 20);
+            this.toolStripStatusLabel.Text = "toolStripStatusLabel";
+            // 
             // DroneServiceApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 679);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.numericUpDown);
             this.Controls.Add(this.buttonRemoveExpress);
             this.Controls.Add(this.buttonRemoveRegular);
@@ -363,16 +386,18 @@
             this.Controls.Add(this.textBoxDroneModel);
             this.Controls.Add(this.textBoxClientName);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.groupBox);
+            this.Controls.Add(this.groupBoxServicePriority);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DroneServiceApplication";
             this.Text = "Drone Service Application";
-            this.groupBox.ResumeLayout(false);
-            this.groupBox.PerformLayout();
+            this.groupBoxServicePriority.ResumeLayout(false);
+            this.groupBoxServicePriority.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,7 +409,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.GroupBox groupBoxServicePriority;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label5;
@@ -412,6 +437,8 @@
         private System.Windows.Forms.Button buttonRemoveRegular;
         private System.Windows.Forms.Button buttonRemoveExpress;
         private System.Windows.Forms.NumericUpDown numericUpDown;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
     }
 }
 
