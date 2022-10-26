@@ -116,7 +116,23 @@ namespace LcarusDroneServiceApplication
         //6.10	Create a custom keypress method to ensure the Service Cost textbox can only accept a double value with one decimal point.
         private void textBoxServiceCost_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
 
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+            //allows only one decimal place after (.)
+            if (e.KeyChar == '.' && textBoxServiceCost.Text.Contains(".") == false)
+            {
+                textBoxServiceCost.MaxLength = textBoxServiceCost.TextLength + 2;
+            }
+           
         }
     }
 }
