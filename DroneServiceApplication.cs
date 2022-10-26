@@ -61,7 +61,7 @@ namespace LcarusDroneServiceApplication
                 {
                     MessageBox.Show("Please choose appropriate service priority");
                 }
-                //resetFields();
+                clearFields();
 
             }
         }
@@ -218,6 +218,17 @@ namespace LcarusDroneServiceApplication
                 FinishedList.Remove(FinishedList[0]);
                 displayFinishedList();
             }
+        }
+        // 6.17	Create a custom method that will clear all the textboxes after each service item has been added.
+        private void clearFields()
+        {
+            textBoxClientName.Clear();
+            textBoxDroneModel.Clear();
+            textAreaServiceProblem.Clear();
+            textBoxServiceCost.Clear();
+            rbRegular.Checked= false;
+            rbExpress.Checked= false;
+            textBoxClientName.Focus();
         }
     }
 }
