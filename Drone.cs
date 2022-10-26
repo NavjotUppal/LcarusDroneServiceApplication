@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
-
+// 6.1	Create a separate class file to hold the data items of the Drone.
+// Use separate getter and setter methods, ensure the attributes are private and the accessor methods are public.
+// Add a display method that returns a string for Client Name and Service Cost.
+// Add suitable code to the Client Name and Service Problem accessor methods so the data is formatted as Title case or Sentence case.
+// Save the class as “Drone.cs”.
 namespace LcarusDroneServiceApplication
 {
     internal class Drone
@@ -15,46 +19,42 @@ namespace LcarusDroneServiceApplication
         private string serviceProblem;
         private int serviceTag;
         TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-        
-              
-        
-
-        public void getClientName(string clientName)
+         public void setClientName(string clientName)
         {
             this.clientName = clientName;
         }
-        public string setClientName()
+        public string getClientName()
         {
             return textInfo.ToTitleCase(clientName);
         }
-        public void getDroneModel(string model)
+        public void setDroneModel(string model)
         {
             droneModel = model;
         }
-        public string setDroneModel()
+        public string getDroneModel()
         {
             return droneModel;
         }
-        public void getServiceProblem(string problem)
+        public void setServiceProblem(string problem)
         {serviceProblem=problem;
         }
-        public string setServiceProblem()
+        public string getServiceProblem()
         {
             return textInfo.ToTitleCase(serviceProblem);
         }
-        public void getServiceCost(double cost)
+        public void setServiceCost(double cost)
         {
             serviceCost=cost;
         }
-        public string setServiceCost()
+        public string getServiceCost()
         {
             return serviceCost.ToString();
         }
-        public void getServiceTag(int tag)
+        public void setServiceTag(int tag)
         {
              serviceTag=tag;
         }
-        public int setServiceTag()
+        public int getServiceTag()
         {
             return (int)serviceTag;
         }

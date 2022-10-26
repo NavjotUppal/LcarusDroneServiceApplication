@@ -32,15 +32,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.groupBox = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxClientName = new System.Windows.Forms.TextBox();
             this.textBoxDroneModel = new System.Windows.Forms.TextBox();
             this.textAreaServiceProblem = new System.Windows.Forms.TextBox();
             this.textBoxServiceCost = new System.Windows.Forms.TextBox();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.buttonAddNewItem = new System.Windows.Forms.Button();
             this.listViewRegular = new System.Windows.Forms.ListView();
             this.ClientName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,7 +59,9 @@
             this.listBoxFinishedService = new System.Windows.Forms.ListBox();
             this.buttonRemoveRegular = new System.Windows.Forms.Button();
             this.buttonRemoveExpress = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.numericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,27 +100,16 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Service Cost";
             // 
-            // groupBox1
+            // groupBox
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(493, 90);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 55);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Service Priority";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 22);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(76, 20);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Regular";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.groupBox.Controls.Add(this.radioButton2);
+            this.groupBox.Controls.Add(this.radioButton1);
+            this.groupBox.Location = new System.Drawing.Point(493, 90);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(200, 55);
+            this.groupBox.TabIndex = 4;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "Service Priority";
             // 
             // radioButton2
             // 
@@ -131,6 +121,17 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Express";
             this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(7, 22);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(76, 20);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Regular";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -169,13 +170,6 @@
             this.textBoxServiceCost.Name = "textBoxServiceCost";
             this.textBoxServiceCost.Size = new System.Drawing.Size(120, 22);
             this.textBoxServiceCost.TabIndex = 9;
-            // 
-            // domainUpDown1
-            // 
-            this.domainUpDown1.Location = new System.Drawing.Point(616, 62);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.domainUpDown1.TabIndex = 10;
             // 
             // buttonAddNewItem
             // 
@@ -322,11 +316,39 @@
             this.buttonRemoveExpress.Text = "RemoveItemExpress";
             this.buttonRemoveExpress.UseVisualStyleBackColor = true;
             // 
+            // numericUpDown
+            // 
+            this.numericUpDown.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown.Location = new System.Drawing.Point(616, 55);
+            this.numericUpDown.Maximum = new decimal(new int[] {
+            900,
+            0,
+            0,
+            0});
+            this.numericUpDown.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.numericUpDown.Name = "numericUpDown";
+            this.numericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown.TabIndex = 20;
+            this.numericUpDown.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
             // DroneServiceApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 679);
+            this.Controls.Add(this.numericUpDown);
             this.Controls.Add(this.buttonRemoveExpress);
             this.Controls.Add(this.buttonRemoveRegular);
             this.Controls.Add(this.listBoxFinishedService);
@@ -336,21 +358,21 @@
             this.Controls.Add(this.listViewExpress);
             this.Controls.Add(this.listViewRegular);
             this.Controls.Add(this.buttonAddNewItem);
-            this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.textBoxServiceCost);
             this.Controls.Add(this.textAreaServiceProblem);
             this.Controls.Add(this.textBoxDroneModel);
             this.Controls.Add(this.textBoxClientName);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DroneServiceApplication";
             this.Text = "Drone Service Application";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox.ResumeLayout(false);
+            this.groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,7 +384,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label5;
@@ -370,7 +392,6 @@
         private System.Windows.Forms.TextBox textBoxDroneModel;
         private System.Windows.Forms.TextBox textAreaServiceProblem;
         private System.Windows.Forms.TextBox textBoxServiceCost;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
         private System.Windows.Forms.Button buttonAddNewItem;
         private System.Windows.Forms.ListView listViewRegular;
         private System.Windows.Forms.ColumnHeader ClientName;
@@ -390,6 +411,7 @@
         private System.Windows.Forms.ListBox listBoxFinishedService;
         private System.Windows.Forms.Button buttonRemoveRegular;
         private System.Windows.Forms.Button buttonRemoveExpress;
+        private System.Windows.Forms.NumericUpDown numericUpDown;
     }
 }
 
