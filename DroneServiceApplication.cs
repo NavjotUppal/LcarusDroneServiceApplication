@@ -154,6 +154,7 @@ namespace LcarusDroneServiceApplication
         {
             int pos = listViewRegular.SelectedIndices[0];
             displayFromRegularServiceQueue(pos);
+            toolStripStatusLabel.Text = "";
         }
       
         private void displayFromRegularServiceQueue(int pos)
@@ -259,26 +260,38 @@ namespace LcarusDroneServiceApplication
 
         private void listViewRegular_MouseHover(object sender, EventArgs e)
         {
-            if(listViewRegular.Items.Count > 0)
-            {
-                toolTip.SetToolTip(listViewRegular, "Click to add the drone to Finished List when service is done. ");
-            }
+           // toolTip.SetToolTip();
         }
 
         private void listViewExpress_MouseHover(object sender, EventArgs e)
         {
-            if (listViewExpress.Items.Count>0)
-            {
-                toolTip.SetToolTip(listViewExpress, "Click to add the drone to Finished List when service is done. ");
-            }
+            
         }
 
         private void listBoxFinishedService_MouseHover(object sender, EventArgs e)
         {
-            if (listBoxFinishedService.Items.Count>0)
+
+            if (listBoxFinishedService.Items.Count > 0)
             {
                 toolTip.SetToolTip(listBoxFinishedService, "Click to remove the drone, when the payment is done. ");
             }
+        }
+
+        private void buttonRemoveRegular_MouseHover(object sender, EventArgs e)
+        {
+            if (listViewRegular.Items.Count > 0)
+            {
+                toolTip.SetToolTip(buttonRemoveRegular, "Click to add the drone to Finished List when service is done. ");
+            }
+        }
+
+        private void buttonRemoveExpress_MouseHover(object sender, EventArgs e)
+        {
+            if (listViewExpress.Items.Count > 0)
+            {
+                toolTip.SetToolTip(buttonRemoveExpress, "Click to add the drone to Finished List when service is done. ");
+            }
+
         }
     }
 }

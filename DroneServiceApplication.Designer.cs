@@ -111,7 +111,7 @@
             this.groupBoxServicePriority.Controls.Add(this.rbRegular);
             this.groupBoxServicePriority.Location = new System.Drawing.Point(493, 90);
             this.groupBoxServicePriority.Name = "groupBoxServicePriority";
-            this.groupBoxServicePriority.Size = new System.Drawing.Size(200, 55);
+            this.groupBoxServicePriority.Size = new System.Drawing.Size(306, 55);
             this.groupBoxServicePriority.TabIndex = 4;
             this.groupBoxServicePriority.TabStop = false;
             this.groupBoxServicePriority.Text = "Service Priority";
@@ -119,18 +119,18 @@
             // rbExpress
             // 
             this.rbExpress.AutoSize = true;
-            this.rbExpress.Location = new System.Drawing.Point(103, 22);
+            this.rbExpress.Location = new System.Drawing.Point(223, 21);
             this.rbExpress.Name = "rbExpress";
             this.rbExpress.Size = new System.Drawing.Size(77, 20);
             this.rbExpress.TabIndex = 1;
-            this.rbExpress.TabStop = true;
             this.rbExpress.Text = "Express";
             this.rbExpress.UseVisualStyleBackColor = true;
             // 
             // rbRegular
             // 
             this.rbRegular.AutoSize = true;
-            this.rbRegular.Location = new System.Drawing.Point(7, 22);
+            this.rbRegular.Checked = true;
+            this.rbRegular.Location = new System.Drawing.Point(132, 21);
             this.rbRegular.Name = "rbRegular";
             this.rbRegular.Size = new System.Drawing.Size(76, 20);
             this.rbRegular.TabIndex = 0;
@@ -151,7 +151,7 @@
             // 
             this.textBoxClientName.Location = new System.Drawing.Point(130, 18);
             this.textBoxClientName.Name = "textBoxClientName";
-            this.textBoxClientName.Size = new System.Drawing.Size(122, 22);
+            this.textBoxClientName.Size = new System.Drawing.Size(177, 22);
             this.textBoxClientName.TabIndex = 6;
             this.textBoxClientName.DoubleClick += new System.EventHandler(this.textBoxClientName_DoubleClick);
             this.textBoxClientName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.textBoxClientName_MouseMove);
@@ -160,7 +160,7 @@
             // 
             this.textBoxDroneModel.Location = new System.Drawing.Point(130, 56);
             this.textBoxDroneModel.Name = "textBoxDroneModel";
-            this.textBoxDroneModel.Size = new System.Drawing.Size(122, 22);
+            this.textBoxDroneModel.Size = new System.Drawing.Size(177, 22);
             this.textBoxDroneModel.TabIndex = 7;
             // 
             // textAreaServiceProblem
@@ -168,14 +168,14 @@
             this.textAreaServiceProblem.Location = new System.Drawing.Point(130, 96);
             this.textAreaServiceProblem.Multiline = true;
             this.textAreaServiceProblem.Name = "textAreaServiceProblem";
-            this.textAreaServiceProblem.Size = new System.Drawing.Size(122, 88);
+            this.textAreaServiceProblem.Size = new System.Drawing.Size(177, 88);
             this.textAreaServiceProblem.TabIndex = 8;
             // 
             // textBoxServiceCost
             // 
             this.textBoxServiceCost.Location = new System.Drawing.Point(616, 18);
             this.textBoxServiceCost.Name = "textBoxServiceCost";
-            this.textBoxServiceCost.Size = new System.Drawing.Size(120, 22);
+            this.textBoxServiceCost.Size = new System.Drawing.Size(183, 22);
             this.textBoxServiceCost.TabIndex = 9;
             this.textBoxServiceCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxServiceCost_KeyPress);
             // 
@@ -322,6 +322,7 @@
             this.buttonRemoveRegular.Text = "RemoveItemRegular";
             this.buttonRemoveRegular.UseVisualStyleBackColor = true;
             this.buttonRemoveRegular.Click += new System.EventHandler(this.buttonRemoveRegular_Click);
+            this.buttonRemoveRegular.MouseHover += new System.EventHandler(this.buttonRemoveRegular_MouseHover);
             // 
             // buttonRemoveExpress
             // 
@@ -332,6 +333,7 @@
             this.buttonRemoveExpress.Text = "RemoveItemExpress";
             this.buttonRemoveExpress.UseVisualStyleBackColor = true;
             this.buttonRemoveExpress.Click += new System.EventHandler(this.buttonRemoveExpress_Click);
+            this.buttonRemoveExpress.MouseHover += new System.EventHandler(this.buttonRemoveExpress_MouseHover);
             // 
             // numericUpDown
             // 
@@ -353,7 +355,7 @@
             0});
             this.numericUpDown.Name = "numericUpDown";
             this.numericUpDown.ReadOnly = true;
-            this.numericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown.Size = new System.Drawing.Size(183, 22);
             this.numericUpDown.TabIndex = 20;
             this.numericUpDown.Value = new decimal(new int[] {
             100,
@@ -366,17 +368,16 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 653);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 657);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(966, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(966, 22);
             this.statusStrip1.TabIndex = 21;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(143, 20);
-            this.toolStripStatusLabel.Text = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 16);
             // 
             // DroneServiceApplication
             // 
