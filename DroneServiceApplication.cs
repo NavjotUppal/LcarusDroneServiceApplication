@@ -29,7 +29,7 @@ namespace LcarusDroneServiceApplication
         // The new service item will be added to the appropriate Queue based on the Priority radio button.
         private void buttonAddNewItem_Click(object sender, EventArgs e)
         {
-            if ((!string.IsNullOrEmpty(textBoxClientName.Text)))
+            if ((!string.IsNullOrEmpty(textBoxClientName.Text))&&(!string.IsNullOrEmpty(textBoxDroneModel.Text))&&(!string.IsNullOrEmpty(textAreaServiceProblem.Text))&& (!string.IsNullOrEmpty(textBoxServiceCost.Text))&&(!string.IsNullOrEmpty(getServicePriority())))
             {
                 Drone drone = new Drone();
                 Double.TryParse(textBoxServiceCost.Text, out cost);
@@ -63,6 +63,10 @@ namespace LcarusDroneServiceApplication
                 }
                 clearFields();
 
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the information properly.");
             }
         }
         //6.7	Create a custom method called “GetServicePriority” which returns the value of the priority radio group.
@@ -151,9 +155,10 @@ namespace LcarusDroneServiceApplication
             int pos = listViewRegular.SelectedIndices[0];
             displayFromRegularServiceQueue(pos);
         }
-
+      
         private void displayFromRegularServiceQueue(int pos)
         {
+            disableControls();
             textBoxClientName.Text = RegularService.ElementAt(pos).getClientName();
             textBoxDroneModel.Text = RegularService.ElementAt(pos).getDroneModel();
             textBoxServiceCost.Text = RegularService.ElementAt(pos).getServiceCost();
@@ -171,6 +176,7 @@ namespace LcarusDroneServiceApplication
         }
         private void displayFromExpressServiceQueue(int pos)
         {
+            disableControls();
             textBoxClientName.Text = ExpressService.ElementAt(pos).getClientName();
             textBoxDroneModel.Text = ExpressService.ElementAt(pos).getDroneModel();
             textBoxServiceCost.Text = ExpressService.ElementAt(pos).getServiceCost();
@@ -229,6 +235,50 @@ namespace LcarusDroneServiceApplication
             rbRegular.Checked= false;
             rbExpress.Checked= false;
             textBoxClientName.Focus();
+        }
+        private void disableControls()
+        {
+            textBoxClientName.Enabled = false;
+            textBoxDroneModel.Enabled = false;
+            textBoxServiceCost.Enabled = false;
+            textAreaServiceProblem.Enabled = false;
+            groupBoxServicePriority.Enabled = false;
+            buttonAddNewItem.Enabled = false;
+        }
+
+        private void textBoxClientName_DoubleClick(object sender, EventArgs e)
+        {
+            clearFields();
+            toolStripStatusLabel.Text = "All the text boxes are cleared.";
+        }
+
+        private void textBoxClientName_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip.SetToolTip(textBoxClientName, "Double Click on the text box to clear the text boxes.");
+        }
+
+        private void listViewRegular_MouseHover(object sender, EventArgs e)
+        {
+            if(listViewRegular.Items.Count > 0)
+            {
+                toolTip.SetToolTip(listViewRegular, "Click to add the drone to Finished List when service is done. ");
+            }
+        }
+
+        private void listViewExpress_MouseHover(object sender, EventArgs e)
+        {
+            if (listViewExpress.Items.Count>0)
+            {
+                toolTip.SetToolTip(listViewExpress, "Click to add the drone to Finished List when service is done. ");
+            }
+        }
+
+        private void listBoxFinishedService_MouseHover(object sender, EventArgs e)
+        {
+            if (listBoxFinishedService.Items.Count>0)
+            {
+                toolTip.SetToolTip(listBoxFinishedService, "Click to remove the drone, when the payment is done. ");
+            }
         }
     }
 }

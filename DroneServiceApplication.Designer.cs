@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,6 +63,7 @@
             this.numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.groupBoxServicePriority.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -151,6 +153,8 @@
             this.textBoxClientName.Name = "textBoxClientName";
             this.textBoxClientName.Size = new System.Drawing.Size(122, 22);
             this.textBoxClientName.TabIndex = 6;
+            this.textBoxClientName.DoubleClick += new System.EventHandler(this.textBoxClientName_DoubleClick);
+            this.textBoxClientName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.textBoxClientName_MouseMove);
             // 
             // textBoxDroneModel
             // 
@@ -201,6 +205,7 @@
             this.listViewRegular.UseCompatibleStateImageBehavior = false;
             this.listViewRegular.View = System.Windows.Forms.View.Details;
             this.listViewRegular.Click += new System.EventHandler(this.listViewRegular_Click);
+            this.listViewRegular.MouseHover += new System.EventHandler(this.listViewRegular_MouseHover);
             // 
             // ClientName
             // 
@@ -243,6 +248,7 @@
             this.listViewExpress.UseCompatibleStateImageBehavior = false;
             this.listViewExpress.View = System.Windows.Forms.View.Details;
             this.listViewExpress.Click += new System.EventHandler(this.listViewExpress_Click);
+            this.listViewExpress.MouseHover += new System.EventHandler(this.listViewExpress_MouseHover);
             // 
             // columnHeader1
             // 
@@ -305,6 +311,7 @@
             this.listBoxFinishedService.Size = new System.Drawing.Size(242, 324);
             this.listBoxFinishedService.TabIndex = 17;
             this.listBoxFinishedService.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxFinishedService_MouseDoubleClick);
+            this.listBoxFinishedService.MouseHover += new System.EventHandler(this.listBoxFinishedService_MouseHover);
             // 
             // buttonRemoveRegular
             // 
@@ -445,6 +452,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

@@ -14,12 +14,12 @@ namespace LcarusDroneServiceApplication
     internal class Drone
     {
         private string clientName;
-       private  string droneModel;
+        private string droneModel;
         private double serviceCost;
         private string serviceProblem;
         private int serviceTag;
         TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-         public void setClientName(string clientName)
+        public void setClientName(string clientName)
         {
             this.clientName = clientName;
         }
@@ -37,7 +37,7 @@ namespace LcarusDroneServiceApplication
         }
         public void setServiceProblem(string newProblem)
         {
-            serviceProblem=newProblem;
+            serviceProblem = newProblem;
         }
         public string getServiceProblem()
         {
@@ -45,8 +45,8 @@ namespace LcarusDroneServiceApplication
         }
         public void setServiceCost(double cost)
         {
-           
-            serviceCost=cost;
+
+            serviceCost = cost;
         }
         public string getServiceCost()
         {
@@ -54,7 +54,7 @@ namespace LcarusDroneServiceApplication
         }
         public void setServiceTag(int tag)
         {
-             serviceTag=tag;
+            serviceTag = tag;
         }
         public string getServiceTag()
         {
